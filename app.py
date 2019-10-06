@@ -9,7 +9,7 @@ app = Flask(__name__)
 api = Api(app)
 
 
-class SteamSearch(Resource):
+class NewsSearch(Resource):
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument('term', required=True,
@@ -37,7 +37,7 @@ class SteamSearch(Resource):
         return results
 
 
-api.add_resource(SteamSearch, '/news')
+api.add_resource(NewsSearch, '/news')
 
 if __name__ == '__main__':
     app.run(debug=True)
